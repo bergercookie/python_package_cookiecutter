@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 homepage = "TODO"
-repository = "{{repo_base}}/{{ cookiecutter.repo_name }}"
+repository = "{{ cookiecutter.repo_base }}/{{ cookiecutter.repo_name }}"
 classifiers = [ "Programming Language :: Python :: 3.6",
                 "Programming Language :: Python :: 3.7",
                 "Programming Language :: Python :: 3.8",

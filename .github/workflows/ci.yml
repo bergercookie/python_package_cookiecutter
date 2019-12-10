@@ -13,16 +13,19 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        PYTHON_VERSION: ['3.6', '3.7', '3.8']
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
-    - uses: actions/checkout@master
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Setup prerequisites
-      run: |
-        sudo apt-get install python3-setuptools
+      - name: Install prerequisites
+        run: |
+          pip install cookiecutter
 
-    - name: Install cookiecutter - make sure I can create a new package
-      run: |
-        pip3 install cookiecutter
-        cookiecutter . --no-input -o output
+      - name: Create package from template
+        run: |
+          cookiecutter . --no-input -o output
