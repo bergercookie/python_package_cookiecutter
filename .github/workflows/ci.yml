@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    # branches:
+    #   - master
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        PYTHON_VERSION: ['3.6', '3.7', '3.8']
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Setup prerequisites
+      run: |
+        sudo apt-get install python3-setuptools
+
+    - name: Install cookiecutter - make sure I can create a new package
+      run: |
+        pip3 install cookiecutter
+        cookiecutter . --no-input -o output
