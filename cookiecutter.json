@@ -1,0 +1,13 @@
+{
+    "full_name": "Nikos Koukis",
+    "email": "nickkouk@gmail.com",
+    "pkg_name": "python_package",
+    "repo_name": "python_package",
+    "repo_base": "ssh://git@github.com/bergercookie",
+    "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    "command_line_interface": ["Argparse", "Click", "No command-line interface"],
+    "use_black_autoformatter": "y",
+    "use_python_utils": "y",
+    "use_pytest": "y",
+    "version": "0.1.0"
+}
