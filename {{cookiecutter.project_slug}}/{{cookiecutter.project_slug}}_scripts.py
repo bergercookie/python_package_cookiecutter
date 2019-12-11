@@ -1,9 +1,9 @@
 import subprocess
 
-python_src = ["{{ cookiecutter.pkg_name }}", "test"]
+python_src = ["{{ cookiecutter.project_slug }}", "test"]
 
 
-def {{cookiecutter.pkg_name}}_lint() -> int:
+def {{cookiecutter.project_slug}}_lint() -> int:
     commands = []
     # use black --chekc, mypy, flake8?
     for c in commands:
@@ -14,7 +14,7 @@ def {{cookiecutter.pkg_name}}_lint() -> int:
     return 0
 
 
-def {{cookiecutter.pkg_name}}_test() -> int:
+def {{cookiecutter.project_slug}}_test() -> int:
     return _call_show_output(["pytest"])
 
 

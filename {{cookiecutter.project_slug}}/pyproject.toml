@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{ cookiecutter.pkg_name }}"
+name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>", ]
@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 homepage = "TODO"
-repository = "{{ cookiecutter.repo_base }}/{{ cookiecutter.repo_name }}"
+repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}"
 classifiers = [ "Programming Language :: Python :: 3.6",
                 "Programming Language :: Python :: 3.7",
                 "Programming Language :: Python :: 3.8",
@@ -50,8 +50,8 @@ black = { version = "*", allows-prereleases = true }
 #    https://github.com/sdispater/poetry/issues/1215
 #    https://github.com/sdispater/poetry/issues/241
 
-{{ cookiecutter.pkg_name }}_lint = "{{ cookiecutter.pkg_name }}_scripts:{{ cookiecutter.pkg_name }}_lint"
-{{ cookiecutter.pkg_name }}_test = "{{ cookiecutter.pkg_name }}_scripts:{{ cookiecutter.pkg_name }}_test"
+{{ cookiecutter.project_slug }}_lint = "{{ cookiecutter.project_slug }}_scripts:{{ cookiecutter.project_slug }}_lint"
+{{ cookiecutter.project_slug }}_test = "{{ cookiecutter.project_slug }}_scripts:{{ cookiecutter.project_slug }}_test"
 
 {%- if cookiecutter.use_black_autoformatter == 'y' %}
 [tool.black]

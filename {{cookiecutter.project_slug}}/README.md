@@ -1,4 +1,4 @@
-# {{ cookiecutter.pkg_name }}
+# {{ cookiecutter.project_slug }}
 ## Description
 ## Installation
 ## Extra configuration
