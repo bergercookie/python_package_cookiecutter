@@ -30,7 +30,7 @@ argparse = "*"
 pytest = "*"
 {%- endif %}
 {%- if cookiecutter.use_black_autoformatter == 'y' %}
-black = { version = "*", allows-prereleases = true }
+black = { version = "*", allow-prereleases = true }
 {%- endif %}
 
 {%- if cookiecutter.full_feature_list == 'y' %}
