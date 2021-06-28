@@ -1,5 +1,6 @@
 name: CI
 
+{% raw %}
 on:
   push:
     # branches:
@@ -21,3 +22,4 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
+{% endraw %}

@@ -15,15 +15,8 @@ classifiers = [ "Programming Language :: Python :: 3.6",
                 "Operating System :: Unix",
 ]
 
-include = [
-    "HISTORY.md",
-    "LICENSE.md",
-    "docs/**/*.rst",
-    "docs/**/*.py",
-]
-
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8.9"
 
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 click = "*"
@@ -40,18 +33,14 @@ pytest = "*"
 black = { version = "*", allows-prereleases = true }
 {%- endif %}
 
-[tool.poetry.source]
+{%- if cookiecutter.full_feature_list == 'y' %}
+mock = "*"
+ipdb = "*"
+{%- endif %}
 
 [tool.poetry.scripts]
 
-# This is not really ideal right now...
-# See issues:
-#
-#    https://github.com/sdispater/poetry/issues/1215
-#    https://github.com/sdispater/poetry/issues/241
-
-{{ cookiecutter.project_slug }}_lint = "{{ cookiecutter.project_slug }}_scripts:{{ cookiecutter.project_slug }}_lint"
-{{ cookiecutter.project_slug }}_test = "{{ cookiecutter.project_slug }}_scripts:{{ cookiecutter.project_slug }}_test"
+{{ cookiecutter.project_slug }}_executable = "{{ cookiecutter.project_slug }}.scripts.myexecutable:main"
 
 {%- if cookiecutter.use_black_autoformatter == 'y' %}
 [tool.black]
