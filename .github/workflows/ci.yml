@@ -1,3 +1,4 @@
+# TODO Test that git commit triggers the hook and that that succeeds
 name: CI
 
 on:
