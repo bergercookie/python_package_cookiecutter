@@ -6,25 +6,19 @@ authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>", ]
 license = "MIT"
 readme = "README.md"
 
-homepage = "TODO"
+homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}"
 repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}"
-classifiers = [ "Programming Language :: Python :: 3.6",
-                "Programming Language :: Python :: 3.7",
-                "Programming Language :: Python :: 3.8",
+classifiers = [ "Programming Language :: Python :: 3.8",
                 "License :: Other/Proprietary License",
                 "Operating System :: Unix",
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8.9"
+python = "^3.8"
 
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 click = "*"
 {%- endif %}
-{%- if cookiecutter.command_line_interface|lower == 'argparse' %}
-argparse = "*"
-{%- endif %}
-
 [tool.poetry.dev-dependencies]
 {%- if cookiecutter.use_pytest == 'y' %}
 pytest = "*"
@@ -32,10 +26,13 @@ pytest = "*"
 {%- if cookiecutter.use_black_autoformatter == 'y' %}
 black = { version = "*", allow-prereleases = true }
 {%- endif %}
+{%- if cookiecutter.use_isort == 'y' %}
+isort = "*"
+{%- endif %}
 
 {%- if cookiecutter.full_feature_list == 'y' %}
 mock = "*"
-ipdb = "*"
+pdbpp = "^0.10.3"
 {%- endif %}
 
 [tool.poetry.scripts]

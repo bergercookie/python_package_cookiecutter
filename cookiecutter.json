@@ -10,6 +10,7 @@
     "create_author_file": "y",
     "full_feature_list": "y",
     "use_black_autoformatter": "y",
+    "use_isort": "y",
     "use_pytest": "y",
     "version": "0.1.0"
 }

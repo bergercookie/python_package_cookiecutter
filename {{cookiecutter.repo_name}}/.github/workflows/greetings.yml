@@ -2,14 +2,15 @@ name: Greetings
 
 on: [pull_request, issues]
 
-{% raw %}
 jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/first-interaction@v1
       with:
+{% raw %}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Message that will be displayed on users'' first issue'
-        pr-message: 'Message that will be displayed on users'' first pr'
 {% endraw %}
+        issue-message: 'Greetings to {{cookiecutter.repo_name}} and thanks for opening this issue'
+        pr-message: 'Thanks for this contribution to {{cookiecutter.repo_name}} 🥳'
+
