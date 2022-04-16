@@ -1,15 +1,15 @@
 # {{ cookiecutter.project_slug }}
 
 TODO Add logo
-TODO Register app with codacy
+TODO Register app in coveralls - set COVERALLS_REPO_TOKEN
 
 <a href="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}/actions" alt="CI">
 <img src="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}/actions/workflows/ci.yml/badge.svg" /></a>
+<a href="https://github.com/pre-commit/pre-commit">
+<img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white" alt="pre-commit"></a>
 
-<img src="https://api.codacy.com/project/badge/Grade/9ddd71dc61914b32a0963d4101c29fb5"/></a>
-<a
-href="https://www.codacy.com/app/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}">
-<img src="https://api.codacy.com/project/badge/Coverage/57206a822c41420bb5792b2cb70f06b5"/></a>
+<a href='https://coveralls.io/github/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}?branch=master'>
+<img src='https://coveralls.io/repos/github/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}/badge.svg?branch=master' alt='Coverage Status' /></a>
 <a href="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}/blob/master/LICENSE.md" alt="LICENSE">
 <img src="https://img.shields.io/github/license/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}.svg" /></a>
 <a href="https://pypi.org/project/{{cookiecutter.project_slug}}/" alt="pypi">
@@ -27,6 +27,16 @@ TODO
 
 ## Installation
 
-## Extra configuration
+Install it from `PyPI`:
+
+```sh
+pip3 install --user --upgrade {{cookiecutter.project_slug}}
+```
+
+To get the latest version install directly from source:
+
+```sh
+pip3 install --user --upgrade git+https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}
+```
 
 ## Example - Usage
