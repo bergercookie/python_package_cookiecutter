@@ -25,32 +25,35 @@ keywords = []
 [tool.poetry.dependencies]
 python = "^3.8"
 
-bubop = "*"
-click = "*"
-
-# dev dependencies -------------------------------------------------------------
 [tool.poetry.dev-dependencies]
+pytest = "*"
 black = { version = "*", allow-prereleases = true }
 isort = "*"
 mock = "*"
-pdbpp = "*"
-pylint = "*"
-pytest = "*"
-rope = "*"
-types-setuptools = "*"
-pyright = "*"
+pdbpp = "^0.10.3"
+identify = "^2.4.0"
 mypy = "*"
-coverage = "*"
-coveralls = "*"
+pre-commit = "^2.16.0"
+pyfakefs = "^4.5.3"
+pylint = "^2.12.2"
+pyright = "*"
+pytest = "*"
+types-PyYAML = "^6.0.1"
+types-python-dateutil = "^2.8.3"
+
+coverage = "^6.2"
+coveralls = "^3.3.1"
 
 [tool.poetry.scripts]
 {{ cookiecutter.project_slug }}_executable = "{{ cookiecutter.project_slug }}.scripts.myexecutable:main"
 
 # isort ------------------------------------------------------------------------
 [tool.isort]
-line_length = 95
 include_trailing_comma = true
+line_length = 95
 multi_line_output = 3
+profile = "black"
+
 # black ------------------------------------------------------------------------
 [tool.black]
 experimental-string-processing = true
@@ -107,8 +110,9 @@ pythonPlatform = "Linux"
 
 # pytest -----------------------------------------------------------------------
 [tool.pytest.ini_options]
-addopts = "--ignore=quickstart* --doctest-modules"
+addopts = "--doctest-modules"
 
+# build-system -----------------------------------------------------------------
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
