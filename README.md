@@ -12,10 +12,12 @@ for a work bootstrapped by this repo.
 
 ## Main features
 
-* `pyproject.toml`-based project
+* `pyproject.toml`-based project using `poetry`
 * Argument parsing via `argparse`
 * `black`, `isort` for formatting the code
-* `HISTORY`, `AUTHORS` and `LICENSE` files
+* `HISTORY`, `AUTHORS`, `LICENSE`, `CONTRIBUTING` files
 * Testing via `pytest`
 * Integration with [pre-commit](https://pre-commit.com/)
-* Configuration for `pyright`, `mypy`, `pylint`
+* Configuration for `pyright`, `mypy`, `pylint`, `pycln`
+* Github issue templates
+* Github sponsorship button
