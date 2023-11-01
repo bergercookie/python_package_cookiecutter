@@ -65,19 +65,23 @@ repos:
         language: system
         pass_filenames: true
         types_or: [python, pyi]
-      - id: Pylint check
-        name: pylint
+      - id: pylint
+        name: Pylint check
         entry: pylint
         language: system
         pass_filenames: true
         types: [python]
         exclude: ^tests/
-      - id: isort
-        name: Isort check
-        entry: isort
-        language: system
-        pass_filenames: true
-        types: [python]
+      - id: ruff-format
+        name: Ruff format check
+        entry: ruff format --force-exclude --fix, --exit-non-zero-on-fix
+        language: python
+        types_or: [python, pyi]
+      - id: ruff-lint
+        name: Ruff lint check
+        entry: ruff check --force-exclude --fix, --exit-non-zero-on-fix
+        language: python
+        types_or: [python, pyi]
       - id: check-poetry
         name: Poetry check
         description: Validates the structure of the pyproject.toml file
